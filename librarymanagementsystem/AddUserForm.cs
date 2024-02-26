@@ -19,8 +19,14 @@ namespace librarymanagementsystem
 
         private void AddUserForm_Load(object sender, EventArgs e)
         {
-            comboBox1.SelectedIndex = 0;
-            comboBox2.SelectedIndex = 0;
+            radioButton1.Select();
+            radioButton3.Select();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            // Close the current form
+            this.Close();
         }
     }
 }
