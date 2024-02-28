@@ -10,11 +10,11 @@ namespace librarymanagementsystem
 {
     public class AppDb
     {
-        //connection
+        // connection
         SqlConnection con = new SqlConnection("Data Source=localhost;Initial Catalog=librarysystem;Integrated Security=True;Encrypt=False");
 
 
-        //create function to get connection
+        // create function to get connection
         public SqlConnection getConnection
         {
             get
@@ -24,7 +24,7 @@ namespace librarymanagementsystem
         }
 
 
-        //create function to open connection
+        // create function to open connection
         public void openConnection()
         {
             if (con.State == ConnectionState.Closed)
@@ -34,7 +34,7 @@ namespace librarymanagementsystem
         }
 
 
-        //create function to close connection
+        // create function to close connection
         public void closeConnection()
         {
             if (con.State == ConnectionState.Open)
