@@ -22,7 +22,9 @@ namespace librarymanagementsystem
 
         private void AddUserForm_Load(object sender, EventArgs e)
         {
-            //sexComboBox.SelectedIndex = 0;
+            // dopdown values define defaultly
+            sexComboBox.SelectedIndex = 0;
+            typeComboBox.SelectedIndex = 0;
         }
 
         private void cancelButton_Click(object sender, EventArgs e)
