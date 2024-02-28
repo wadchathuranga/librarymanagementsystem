@@ -22,7 +22,7 @@ namespace librarymanagementsystem
 
         private void AddUserForm_Load(object sender, EventArgs e)
         {
-            // dopdown values define defaultly
+            // initialized dropdown initial values
             sexComboBox.SelectedIndex = 0;
             typeComboBox.SelectedIndex = 0;
         }

@@ -22,8 +22,17 @@ namespace librarymanagementsystem
             // Create an instance of Form2
             AddUserForm addUserForm = new AddUserForm();
 
-            // Show Form2
+            // Show add user form
             addUserForm.Show();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            // Create an instance of Form2
+            AddBookForm addBookForm = new AddBookForm();
+
+            // Show add user form
+            addBookForm.Show();
         }
     }
 }
