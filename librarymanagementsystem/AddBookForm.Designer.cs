@@ -124,9 +124,9 @@
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.Location = new System.Drawing.Point(234, 330);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(61, 20);
+            this.label8.Size = new System.Drawing.Size(171, 25);
             this.label8.TabIndex = 7;
-            this.label8.Text = "Copies";
+            this.label8.Text = "Copies (Max=10)";
             // 
             // classificationTextBox
             // 
@@ -169,6 +169,7 @@
             this.copiesTextBox.Name = "copiesTextBox";
             this.copiesTextBox.Size = new System.Drawing.Size(121, 22);
             this.copiesTextBox.TabIndex = 14;
+            this.copiesTextBox.TextChanged += new System.EventHandler(this.validateCopies);
             // 
             // backButton
             // 

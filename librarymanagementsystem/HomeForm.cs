@@ -19,7 +19,7 @@ namespace librarymanagementsystem
 
         private void button1_Click(object sender, EventArgs e)
         {
-            // Create an instance of Form2
+            // Create an instance of AddUserForm
             AddUserForm addUserForm = new AddUserForm();
 
             // Show add user form
@@ -28,11 +28,20 @@ namespace librarymanagementsystem
 
         private void button2_Click(object sender, EventArgs e)
         {
-            // Create an instance of Form2
+            // Create an instance of AddBookForm
             AddBookForm addBookForm = new AddBookForm();
 
             // Show add user form
             addBookForm.Show();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            // Create an instance of CheckBookStatus
+            CheckBookStatus checkBookStatus = new CheckBookStatus();
+
+            // Show add user form
+            checkBookStatus.Show();
         }
     }
 }

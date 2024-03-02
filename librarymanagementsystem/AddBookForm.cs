@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace librarymanagementsystem
 {
@@ -22,6 +23,7 @@ namespace librarymanagementsystem
         {
             // initialized dropdown initial values
             statusComboBox.SelectedIndex = 0;
+            copiesTextBox.Text = "0";
         }
 
         private void backButton_Click(object sender, EventArgs e)
@@ -43,13 +45,12 @@ namespace librarymanagementsystem
             bookExists.Parameters.AddWithValue("@BookId", bookIdTextBox.Text);
             int count = (int)bookExists.ExecuteScalar();
 
-            // if book is already registered, program will not excute further
+            // if book Id is already registered, program will not excute further
             if (count > 0) 
             {
-                var result = MessageBox.Show("This book is already registered.", "Message");
+                var result = MessageBox.Show("This book Id is already registered.", "Message");
                 if (result == DialogResult.OK)
                 {
-                    clearDataFields();
                     return;
                 }
             }
@@ -68,7 +69,7 @@ namespace librarymanagementsystem
             //}
 
             // save book into db
-            SqlCommand book = new SqlCommand("insert into Books values (@Classification, @Title, @Publisher, @Status, @Author, @BookId)", conn.getConnection);
+            SqlCommand book = new SqlCommand("INSERT INTO Books VALUES (@Classification, @Title, @Publisher, @Status, @Author, @BookId)", conn.getConnection);
             book.Parameters.AddWithValue("@Classification", classificationTextBox.Text);
             book.Parameters.AddWithValue("@Title", titleTextBox.Text);
             book.Parameters.AddWithValue("@Publisher", publisherTextBox.Text);
@@ -86,7 +87,7 @@ namespace librarymanagementsystem
                 // save book copies using loop
                 for (int i = 1; i <= copies; i++)
                 {
-                    SqlCommand bookCopy = new SqlCommand("insert into Books values (@Classification, @Title, @Publisher, @Status, @Author, @BookId)", conn.getConnection);
+                    SqlCommand bookCopy = new SqlCommand("INSERT INTO Books VALUES (@Classification, @Title, @Publisher, @Status, @Author, @BookId)", conn.getConnection);
                     bookCopy.Parameters.AddWithValue("@Classification", classificationTextBox.Text);
                     bookCopy.Parameters.AddWithValue("@Title", titleTextBox.Text);
                     bookCopy.Parameters.AddWithValue("@Publisher", publisherTextBox.Text);
@@ -102,6 +103,21 @@ namespace librarymanagementsystem
 
             // clear text boxes
             clearDataFields();
+        }
+
+        // validate copies count
+        private void validateCopies(object sender, EventArgs e)
+        {
+            if (copiesTextBox.TextLength <= 0) {
+                copiesTextBox.Text = "0";
+
+            }
+            
+            if (int.Parse(copiesTextBox.Text) > 10) {
+                copiesTextBox.Text = "10";
+                MessageBox.Show("Should be less than 10.");
+
+            }
         }
 
         // to clear fields

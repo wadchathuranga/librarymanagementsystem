@@ -59,11 +59,27 @@
       <DependentUpon>AddUserForm.cs</DependentUpon>
     </Compile>
     <Compile Include="AppDb.cs" />
+    <Compile Include="CheckBookStatus.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CheckBookStatus.Designer.cs">
+      <DependentUpon>CheckBookStatus.cs</DependentUpon>
+    </Compile>
     <Compile Include="HomeForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="HomeForm.Designer.cs">
       <DependentUpon>HomeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="librarysystemDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>librarysystemDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="librarysystemDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>librarysystemDataSet1.xsd</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -72,6 +88,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AddUserForm.resx">
       <DependentUpon>AddUserForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CheckBookStatus.resx">
+      <DependentUpon>CheckBookStatus.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HomeForm.resx">
       <DependentUpon>HomeForm.cs</DependentUpon>
@@ -85,6 +104,28 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="librarysystemDataSet.xsc">
+      <DependentUpon>librarysystemDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="librarysystemDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>librarysystemDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="librarysystemDataSet.xss">
+      <DependentUpon>librarysystemDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="librarysystemDataSet1.xsc">
+      <DependentUpon>librarysystemDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="librarysystemDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>librarysystemDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="librarysystemDataSet1.xss">
+      <DependentUpon>librarysystemDataSet1.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
