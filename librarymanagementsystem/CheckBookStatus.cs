@@ -51,7 +51,7 @@ namespace librarymanagementsystem
             
             else if (otherRadioBtn)
             {
-                string query = "SELECT * FROM Books WHERE CONCAT(Title,' ', Author) LIKE '%" + otherSearchText + "%'";
+                string query = "SELECT * FROM Books WHERE CONCAT(Title, Author) LIKE '%" + otherSearchText + "%'";
                 SqlCommand cmd = new SqlCommand(query, conn.getConnection);
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
@@ -65,16 +65,18 @@ namespace librarymanagementsystem
 
         private void bookIdRadioButton_CheckedChanged(object sender, EventArgs e)
         {
-            otherSearchTextBox.Text = null;
-            otherSearchTextBox.Enabled = false;
-            bookIdSearchTextBox.Enabled = true;
+            searchButton.Enabled = true; // set button active
+            otherSearchTextBox.Text = null; // text box clear
+            otherSearchTextBox.Enabled = false; // set text box disable
+            bookIdSearchTextBox.Enabled = true; // set text box active
         }
 
         private void otherRadioButton_CheckedChanged(object sender, EventArgs e)
         {
-            bookIdSearchTextBox.Text = null;
-            bookIdSearchTextBox.Enabled = false;
-            otherSearchTextBox.Enabled = true;
+            searchButton.Enabled = false; // set button disable
+            bookIdSearchTextBox.Text = null; // text box clear
+            bookIdSearchTextBox.Enabled = false;// set text box disable
+            otherSearchTextBox.Enabled = true; // set text box active
         }
 
         
