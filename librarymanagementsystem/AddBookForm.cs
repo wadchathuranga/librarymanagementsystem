@@ -19,6 +19,7 @@ namespace librarymanagementsystem
             InitializeComponent();
         }
 
+
         private void AddBookForm_Load(object sender, EventArgs e)
         {
             // initialized dropdown initial values
@@ -26,11 +27,13 @@ namespace librarymanagementsystem
             copiesTextBox.Text = "0";
         }
 
+
         private void backButton_Click(object sender, EventArgs e)
         {
             // Close the current form
             this.Close();
         }
+
 
         private void addBookButton_Click(object sender, EventArgs e)
         {
@@ -54,19 +57,6 @@ namespace librarymanagementsystem
                     return;
                 }
             }
-
-            //SqlDataReader reader = bookExists.ExecuteReader();
-
-            //while (reader.Read())
-            //{
-            //    // Fetch data into variables
-            //    int id = Convert.ToInt32(reader["Id"]);
-            //    string name = reader["Title"].ToString();
-            //    // Fetch other columns as needed
-
-            //    // Use the fetched data
-            //    Console.WriteLine($"ID: {id}, Name: {name}");
-            //}
 
             // save book into db
             SqlCommand book = new SqlCommand("INSERT INTO Books VALUES (@Classification, @Title, @Publisher, @Status, @Author, @BookId)", conn.getConnection);
@@ -105,6 +95,7 @@ namespace librarymanagementsystem
             clearDataFields();
         }
 
+
         // validate copies count
         private void validateCopies(object sender, EventArgs e)
         {
@@ -119,6 +110,7 @@ namespace librarymanagementsystem
 
             }
         }
+
 
         // to clear fields
         private void clearDataFields()
