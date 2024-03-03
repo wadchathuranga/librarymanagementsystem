@@ -118,7 +118,6 @@ namespace librarymanagementsystem
             classificationTextBox.Text = null;
             titleTextBox.Text = null;
             publisherTextBox.Text = null;
-            statusComboBox.Text = null;
             authorTextBox.Text = null;
             bookIdTextBox.Text = null;
             copiesTextBox.Text = null;
