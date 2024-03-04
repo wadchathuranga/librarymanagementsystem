@@ -35,14 +35,24 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.userIdTextBox = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.findUserButton = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.librarysystemDataSet1 = new librarymanagementsystem.librarysystemDataSet();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.librarysystemDataSet1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -118,12 +128,12 @@
             this.label7.TabIndex = 6;
             this.label7.Text = "Status";
             // 
-            // textBox1
+            // userIdTextBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(161, 90);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 22);
-            this.textBox1.TabIndex = 7;
+            this.userIdTextBox.Location = new System.Drawing.Point(161, 90);
+            this.userIdTextBox.Name = "userIdTextBox";
+            this.userIdTextBox.Size = new System.Drawing.Size(100, 22);
+            this.userIdTextBox.TabIndex = 7;
             // 
             // textBox2
             // 
@@ -150,19 +160,20 @@
             this.label9.TabIndex = 10;
             this.label9.Text = "CAL DATE FROM ISSUE DATE";
             // 
-            // button1
+            // findUserButton
             // 
-            this.button1.Location = new System.Drawing.Point(295, 90);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 11;
-            this.button1.Text = "Find";
-            this.button1.UseVisualStyleBackColor = true;
+            this.findUserButton.Location = new System.Drawing.Point(280, 90);
+            this.findUserButton.Name = "findUserButton";
+            this.findUserButton.Size = new System.Drawing.Size(75, 23);
+            this.findUserButton.TabIndex = 11;
+            this.findUserButton.Text = "Find";
+            this.findUserButton.UseVisualStyleBackColor = true;
+            this.findUserButton.Click += new System.EventHandler(this.findUserButton_Click);
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(471, 94);
+            this.label10.Location = new System.Drawing.Point(497, 90);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(76, 16);
             this.label10.TabIndex = 12;
@@ -171,7 +182,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(474, 125);
+            this.label11.Location = new System.Drawing.Point(497, 125);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(29, 16);
             this.label11.TabIndex = 13;
@@ -180,25 +191,102 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(471, 160);
+            this.label12.Location = new System.Drawing.Point(497, 160);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(39, 16);
             this.label12.TabIndex = 14;
             this.label12.Text = "Type";
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(386, 278);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.Size = new System.Drawing.Size(402, 160);
+            this.dataGridView1.TabIndex = 15;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(497, 194);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(106, 16);
+            this.label13.TabIndex = 16;
+            this.label13.Text = "Over Due Books";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(497, 256);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(160, 16);
+            this.label14.TabIndex = 17;
+            this.label14.Text = "User\'s Loaned Out Books";
+            this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(626, 90);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(53, 20);
+            this.label15.TabIndex = 18;
+            this.label15.Text = "_____";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(626, 194);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(53, 20);
+            this.label16.TabIndex = 21;
+            this.label16.Text = "_____";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(626, 160);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(53, 20);
+            this.label17.TabIndex = 20;
+            this.label17.Text = "_____";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(626, 125);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(53, 20);
+            this.label18.TabIndex = 19;
+            this.label18.Text = "_____";
+            // 
+            // librarysystemDataSet1
+            // 
+            this.librarysystemDataSet1.DataSetName = "librarysystemDataSet";
+            this.librarysystemDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // IssueBooks
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(804, 453);
+            this.Controls.Add(this.label16);
+            this.Controls.Add(this.label17);
+            this.Controls.Add(this.label18);
+            this.Controls.Add(this.label15);
+            this.Controls.Add(this.label14);
+            this.Controls.Add(this.label13);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label10);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.findUserButton);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.userIdTextBox);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
@@ -208,6 +296,8 @@
             this.Controls.Add(this.label1);
             this.Name = "IssueBooks";
             this.Text = "IssueBooks";
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.librarysystemDataSet1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -222,13 +312,21 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox userIdTextBox;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button findUserButton;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label label18;
+        private librarysystemDataSet librarysystemDataSet1;
     }
 }

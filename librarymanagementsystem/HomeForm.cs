@@ -43,5 +43,14 @@ namespace librarymanagementsystem
             // Show add user form
             checkBookStatus.Show();
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            // Create an instance of IssueBooks
+            IssueBooks issueBooks = new IssueBooks();
+
+            // Show add user form
+            issueBooks.Show();
+        }
     }
 }
