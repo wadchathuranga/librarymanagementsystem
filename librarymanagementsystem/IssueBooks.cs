@@ -28,11 +28,14 @@ namespace librarymanagementsystem
             conn.openConnection();
             SqlCommand cmd = new SqlCommand("SELECT * FROM Users WHERE UserId = @UserId", conn.getConnection);
             cmd.Parameters.AddWithValue("@UserId", userId);
-
+            
             SqlDataReader reader = cmd.ExecuteReader();
+
             while (reader.Read())
             {
                 string userName = (string)reader["Name"];
+                string nic = (string)reader["NIC"];
+                string type = (string)reader["Type"];
             }
         }
     }

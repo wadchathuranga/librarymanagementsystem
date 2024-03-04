@@ -210,7 +210,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(497, 194);
+            this.label13.Location = new System.Drawing.Point(497, 213);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(106, 16);
             this.label13.TabIndex = 16;
@@ -231,16 +231,16 @@
             this.label15.AutoSize = true;
             this.label15.Location = new System.Drawing.Point(626, 90);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(53, 20);
+            this.label15.Size = new System.Drawing.Size(42, 16);
             this.label15.TabIndex = 18;
             this.label15.Text = "_____";
             // 
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(626, 194);
+            this.label16.Location = new System.Drawing.Point(626, 213);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(53, 20);
+            this.label16.Size = new System.Drawing.Size(42, 16);
             this.label16.TabIndex = 21;
             this.label16.Text = "_____";
             // 
@@ -249,7 +249,7 @@
             this.label17.AutoSize = true;
             this.label17.Location = new System.Drawing.Point(626, 160);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(53, 20);
+            this.label17.Size = new System.Drawing.Size(42, 16);
             this.label17.TabIndex = 20;
             this.label17.Text = "_____";
             // 
@@ -258,7 +258,7 @@
             this.label18.AutoSize = true;
             this.label18.Location = new System.Drawing.Point(626, 125);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(53, 20);
+            this.label18.Size = new System.Drawing.Size(42, 16);
             this.label18.TabIndex = 19;
             this.label18.Text = "_____";
             // 
