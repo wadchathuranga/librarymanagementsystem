@@ -37,8 +37,8 @@
             this.label7 = new System.Windows.Forms.Label();
             this.userIdTextBox = new System.Windows.Forms.TextBox();
             this.bookIdTextBox = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
+            this.issueDateLabel = new System.Windows.Forms.Label();
+            this.dueDateLabel = new System.Windows.Forms.Label();
             this.findUserButton = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.bookStatusLabel = new System.Windows.Forms.Label();
@@ -146,23 +146,23 @@
             this.bookIdTextBox.Size = new System.Drawing.Size(100, 22);
             this.bookIdTextBox.TabIndex = 8;
             // 
-            // label8
+            // issueDateLabel
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(128, 335);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(176, 16);
-            this.label8.TabIndex = 9;
-            this.label8.Text = "GET DATE FROM SYSTEM";
+            this.issueDateLabel.AutoSize = true;
+            this.issueDateLabel.Location = new System.Drawing.Point(141, 334);
+            this.issueDateLabel.Name = "issueDateLabel";
+            this.issueDateLabel.Size = new System.Drawing.Size(34, 16);
+            this.issueDateLabel.TabIndex = 9;
+            this.issueDateLabel.Text = "date";
             // 
-            // label9
+            // dueDateLabel
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(128, 363);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(197, 16);
-            this.label9.TabIndex = 10;
-            this.label9.Text = "CAL DATE FROM ISSUE DATE";
+            this.dueDateLabel.AutoSize = true;
+            this.dueDateLabel.Location = new System.Drawing.Point(141, 362);
+            this.dueDateLabel.Name = "dueDateLabel";
+            this.dueDateLabel.Size = new System.Drawing.Size(34, 16);
+            this.dueDateLabel.TabIndex = 10;
+            this.dueDateLabel.Text = "date";
             // 
             // findUserButton
             // 
@@ -315,8 +315,8 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.findUserButton);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.label8);
+            this.Controls.Add(this.dueDateLabel);
+            this.Controls.Add(this.issueDateLabel);
             this.Controls.Add(this.bookIdTextBox);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
@@ -349,8 +349,8 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox userIdTextBox;
         private System.Windows.Forms.TextBox bookIdTextBox;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label issueDateLabel;
+        private System.Windows.Forms.Label dueDateLabel;
         private System.Windows.Forms.Button findUserButton;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label bookStatusLabel;

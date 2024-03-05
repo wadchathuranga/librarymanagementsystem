@@ -27,6 +27,16 @@ namespace librarymanagementsystem
         {
             bookIdTextBox.Enabled = false;
             bookIssueButton.Enabled = false;
+            bookFindButton.Enabled = false;
+
+            // Get the current date
+            DateTime currentDate = DateTime.Now;
+
+            // set issue date
+            issueDateLabel.Text = DateTime.Now.ToString("yyyy-MM-dd");
+
+            // Add two weeks to the current date
+            dueDateLabel.Text = DateTime.Now.AddDays(14).ToString("yyyy-MM-dd");
         }
 
 
@@ -127,6 +137,7 @@ namespace librarymanagementsystem
                     // enable issue book text box
                     bookIssueButton.Enabled = true;
                     bookIdTextBox.Focus();
+                    bookFindButton.Enabled = true;
                 }
                 else
                 {
