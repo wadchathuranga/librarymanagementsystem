@@ -206,12 +206,12 @@
             // typeLabel
             // 
             this.typeLabel.AutoSize = true;
-            this.typeLabel.Location = new System.Drawing.Point(225, 26);
+            this.typeLabel.Location = new System.Drawing.Point(264, 26);
             this.typeLabel.Name = "typeLabel";
             this.typeLabel.Size = new System.Drawing.Size(33, 16);
             this.typeLabel.TabIndex = 20;
             this.typeLabel.Text = "type";
-            this.typeLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.typeLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // nicLabel
             // 
