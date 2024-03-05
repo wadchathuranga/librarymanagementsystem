@@ -81,12 +81,12 @@ namespace librarymanagementsystem
                     DataTable dt = new DataTable();
                     da.Fill(dt);
                     dataGridView1.DataSource = dt;
+                    conn.closeConnection();
 
                     // enable issue book text box & button
                     bookIdTextBox.Enabled = true;
                     bookIdTextBox.Focus();
                     bookFindButton.Enabled = true;
-
                 }
                 else
                 {

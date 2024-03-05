@@ -83,7 +83,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(420, 70);
+            this.label3.Location = new System.Drawing.Point(404, 70);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(70, 20);
             this.label3.TabIndex = 2;
@@ -94,7 +94,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(420, 202);
+            this.label4.Location = new System.Drawing.Point(410, 190);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(95, 20);
             this.label4.TabIndex = 3;
@@ -105,7 +105,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(611, 202);
+            this.label5.Location = new System.Drawing.Point(609, 190);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(86, 20);
             this.label5.TabIndex = 4;
@@ -121,15 +121,15 @@
             // 
             // bookIdTextBox
             // 
-            this.bookIdTextBox.Location = new System.Drawing.Point(514, 70);
+            this.bookIdTextBox.Location = new System.Drawing.Point(498, 70);
             this.bookIdTextBox.Name = "bookIdTextBox";
-            this.bookIdTextBox.Size = new System.Drawing.Size(136, 22);
+            this.bookIdTextBox.Size = new System.Drawing.Size(152, 22);
             this.bookIdTextBox.TabIndex = 8;
             // 
             // issueDateLabel
             // 
             this.issueDateLabel.AutoSize = true;
-            this.issueDateLabel.Location = new System.Drawing.Point(521, 205);
+            this.issueDateLabel.Location = new System.Drawing.Point(511, 193);
             this.issueDateLabel.Name = "issueDateLabel";
             this.issueDateLabel.Size = new System.Drawing.Size(34, 16);
             this.issueDateLabel.TabIndex = 9;
@@ -138,7 +138,7 @@
             // dueDateLabel
             // 
             this.dueDateLabel.AutoSize = true;
-            this.dueDateLabel.Location = new System.Drawing.Point(703, 206);
+            this.dueDateLabel.Location = new System.Drawing.Point(701, 194);
             this.dueDateLabel.Name = "dueDateLabel";
             this.dueDateLabel.Size = new System.Drawing.Size(34, 16);
             this.dueDateLabel.TabIndex = 10;
@@ -157,17 +157,17 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(28, 289);
+            this.dataGridView1.Location = new System.Drawing.Point(28, 255);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(748, 149);
+            this.dataGridView1.Size = new System.Drawing.Size(748, 183);
             this.dataGridView1.TabIndex = 15;
             // 
             // bookStatusLabel
             // 
             this.bookStatusLabel.AutoSize = true;
-            this.bookStatusLabel.Location = new System.Drawing.Point(24, 54);
+            this.bookStatusLabel.Location = new System.Drawing.Point(24, 49);
             this.bookStatusLabel.Name = "bookStatusLabel";
             this.bookStatusLabel.Size = new System.Drawing.Size(42, 16);
             this.bookStatusLabel.TabIndex = 16;
@@ -177,7 +177,7 @@
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(308, 266);
+            this.label14.Location = new System.Drawing.Point(308, 230);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(202, 20);
             this.label14.TabIndex = 17;
@@ -197,7 +197,7 @@
             // bookTitleLabel
             // 
             this.bookTitleLabel.AutoSize = true;
-            this.bookTitleLabel.Location = new System.Drawing.Point(24, 26);
+            this.bookTitleLabel.Location = new System.Drawing.Point(24, 25);
             this.bookTitleLabel.Name = "bookTitleLabel";
             this.bookTitleLabel.Size = new System.Drawing.Size(62, 16);
             this.bookTitleLabel.TabIndex = 21;
@@ -242,7 +242,7 @@
             // 
             // bookFindButton
             // 
-            this.bookFindButton.Location = new System.Drawing.Point(656, 69);
+            this.bookFindButton.Location = new System.Drawing.Point(656, 70);
             this.bookFindButton.Name = "bookFindButton";
             this.bookFindButton.Size = new System.Drawing.Size(120, 23);
             this.bookFindButton.TabIndex = 21;
@@ -252,9 +252,9 @@
             // 
             // backButton
             // 
-            this.backButton.Location = new System.Drawing.Point(28, 187);
+            this.backButton.Location = new System.Drawing.Point(28, 181);
             this.backButton.Name = "backButton";
-            this.backButton.Size = new System.Drawing.Size(147, 55);
+            this.backButton.Size = new System.Drawing.Size(147, 35);
             this.backButton.TabIndex = 23;
             this.backButton.Text = "Back";
             this.backButton.UseVisualStyleBackColor = true;
@@ -262,9 +262,9 @@
             // 
             // bookIssueButton
             // 
-            this.bookIssueButton.Location = new System.Drawing.Point(181, 187);
+            this.bookIssueButton.Location = new System.Drawing.Point(181, 181);
             this.bookIssueButton.Name = "bookIssueButton";
-            this.bookIssueButton.Size = new System.Drawing.Size(178, 55);
+            this.bookIssueButton.Size = new System.Drawing.Size(178, 35);
             this.bookIssueButton.TabIndex = 24;
             this.bookIssueButton.Text = "Issue";
             this.bookIssueButton.UseVisualStyleBackColor = true;
@@ -274,9 +274,9 @@
             // 
             this.groupBox2.Controls.Add(this.bookTitleLabel);
             this.groupBox2.Controls.Add(this.bookStatusLabel);
-            this.groupBox2.Location = new System.Drawing.Point(424, 101);
+            this.groupBox2.Location = new System.Drawing.Point(408, 101);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(352, 87);
+            this.groupBox2.Size = new System.Drawing.Size(368, 76);
             this.groupBox2.TabIndex = 25;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Book Info";
