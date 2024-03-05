@@ -155,7 +155,31 @@ namespace librarymanagementsystem
         // book issue button
         private void bookIssueButton_Click(object sender, EventArgs e)
         {
-            //
+            try
+            {
+                string userId = userIdTextBox.Text;
+                string bookId = bookIdTextBox.Text;
+                string issueDate = issueDateLabel.Text;
+                string dueDate = dueDateLabel.Text;
+
+                conn.openConnection();
+
+                // save issue book roecord into db
+                SqlCommand book = new SqlCommand("INSERT INTO IssueBooks VALUES (@UserId, @BookId, @IssueDate, @DueDate, @ReturnDate, @Status)", conn.getConnection);
+                book.Parameters.AddWithValue("@UserId", userId);
+                book.Parameters.AddWithValue("@BookId", bookId);
+                book.Parameters.AddWithValue("@IssueDate", issueDate);
+                book.Parameters.AddWithValue("@DueDate", dueDate);
+                book.Parameters.AddWithValue("@ReturnDate", null);
+                book.Parameters.AddWithValue("@Status", "LOANED_OUT");
+                book.ExecuteNonQuery();
+                conn.closeConnection();
+            }
+            catch (Exception ex)
+            {
+                conn.closeConnection();
+                MessageBox.Show("Error: " + ex.Message);
+            }
         }
     }
 }
