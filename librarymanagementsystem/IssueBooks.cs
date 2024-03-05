@@ -51,14 +51,14 @@ namespace librarymanagementsystem
         // find user button
         private void findUserButton_Click(object sender, EventArgs e)
         {
-            string userId = userIdTextBox.Text;
-
-            SqlCommand cmd = new SqlCommand("SELECT * FROM Users WHERE UserId = @UserId", conn.getConnection);
-            cmd.Parameters.AddWithValue("@UserId", userId);
-
             try
             {
+                string userId = userIdTextBox.Text;
+
                 conn.openConnection();
+                SqlCommand cmd = new SqlCommand("SELECT * FROM Users WHERE UserId = @UserId", conn.getConnection);
+                cmd.Parameters.AddWithValue("@UserId", userId);
+
                 SqlDataReader reader = cmd.ExecuteReader();
 
                 // If data exists
@@ -75,22 +75,24 @@ namespace librarymanagementsystem
                         typeLabel.Text = type;
                     }
 
-                    // enable issue book text box
+                    // enable issue book text box & button
                     bookIdTextBox.Enabled = true;
                     bookIdTextBox.Focus();
+                    bookFindButton.Enabled = true;
+
                 }
                 else
                 {
                     MessageBox.Show("Data not found in the database.");
                     
                 }
+                conn.closeConnection();
             }
             catch (Exception ex)
             {
+                conn.closeConnection();
                 MessageBox.Show("Error: " + ex.Message);
             }
-
-            conn.closeConnection();
 
             //SqlDataReader reader = cmd.ExecuteReader();
 
@@ -121,7 +123,6 @@ namespace librarymanagementsystem
 
                 SqlDataReader reader = cmd.ExecuteReader();
 
-
                 // If data exists
                 if (reader.HasRows)
                 {
@@ -134,10 +135,8 @@ namespace librarymanagementsystem
                         bookStatusLabel.Text = $"[{status}]";
                     }
 
-                    // enable issue book text box
+                    // enable issue book text box & button
                     bookIssueButton.Enabled = true;
-                    bookIdTextBox.Focus();
-                    bookFindButton.Enabled = true;
                 }
                 else
                 {
