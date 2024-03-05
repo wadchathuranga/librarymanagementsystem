@@ -46,10 +46,10 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
+            this.userNameLabel = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
+            this.typeLabel = new System.Windows.Forms.Label();
+            this.nicLabel = new System.Windows.Forms.Label();
             this.librarysystemDataSet1 = new librarymanagementsystem.librarysystemDataSet();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.librarysystemDataSet1)).BeginInit();
@@ -226,14 +226,14 @@
             this.label14.Text = "User\'s Loaned Out Books";
             this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label15
+            // userNameLabel
             // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(626, 90);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(42, 16);
-            this.label15.TabIndex = 18;
-            this.label15.Text = "_____";
+            this.userNameLabel.AutoSize = true;
+            this.userNameLabel.Location = new System.Drawing.Point(626, 90);
+            this.userNameLabel.Name = "userNameLabel";
+            this.userNameLabel.Size = new System.Drawing.Size(42, 16);
+            this.userNameLabel.TabIndex = 18;
+            this.userNameLabel.Text = "_____";
             // 
             // label16
             // 
@@ -244,23 +244,23 @@
             this.label16.TabIndex = 21;
             this.label16.Text = "_____";
             // 
-            // label17
+            // typeLabel
             // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(626, 160);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(42, 16);
-            this.label17.TabIndex = 20;
-            this.label17.Text = "_____";
+            this.typeLabel.AutoSize = true;
+            this.typeLabel.Location = new System.Drawing.Point(626, 160);
+            this.typeLabel.Name = "typeLabel";
+            this.typeLabel.Size = new System.Drawing.Size(42, 16);
+            this.typeLabel.TabIndex = 20;
+            this.typeLabel.Text = "_____";
             // 
-            // label18
+            // nicLabel
             // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(626, 125);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(42, 16);
-            this.label18.TabIndex = 19;
-            this.label18.Text = "_____";
+            this.nicLabel.AutoSize = true;
+            this.nicLabel.Location = new System.Drawing.Point(626, 125);
+            this.nicLabel.Name = "nicLabel";
+            this.nicLabel.Size = new System.Drawing.Size(42, 16);
+            this.nicLabel.TabIndex = 19;
+            this.nicLabel.Text = "_____";
             // 
             // librarysystemDataSet1
             // 
@@ -273,9 +273,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(804, 453);
             this.Controls.Add(this.label16);
-            this.Controls.Add(this.label17);
-            this.Controls.Add(this.label18);
-            this.Controls.Add(this.label15);
+            this.Controls.Add(this.typeLabel);
+            this.Controls.Add(this.nicLabel);
+            this.Controls.Add(this.userNameLabel);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.dataGridView1);
@@ -323,10 +323,10 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label userNameLabel;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label typeLabel;
+        private System.Windows.Forms.Label nicLabel;
         private librarysystemDataSet librarysystemDataSet1;
     }
 }
