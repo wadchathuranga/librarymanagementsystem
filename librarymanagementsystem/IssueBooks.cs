@@ -21,6 +21,13 @@ namespace librarymanagementsystem
             InitializeComponent();
         }
 
+        // when issue books loading
+        private void IssueBooks_Load(object sender, EventArgs e)
+        {
+            bookIdTextBox.Enabled = false;
+        }
+
+        // find user button method
         private void findUserButton_Click(object sender, EventArgs e)
         {
             string userId = userIdTextBox.Text;
@@ -28,19 +35,55 @@ namespace librarymanagementsystem
             conn.openConnection();
             SqlCommand cmd = new SqlCommand("SELECT * FROM Users WHERE UserId = @UserId", conn.getConnection);
             cmd.Parameters.AddWithValue("@UserId", userId);
-            
-            SqlDataReader reader = cmd.ExecuteReader();
 
-            while (reader.Read())
+            try
             {
-                string userName = (string)reader["Name"];
-                string nic = (string)reader["NIC"];
-                string type = (string)reader["Type"];
+                conn.openConnection();
+                SqlDataReader reader = cmd.ExecuteReader();
 
-                userNameLabel.Text = userName;
-                nicLabel.Text = nic;
-                typeLabel.Text = type; 
+                // If data exists
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        string userName = (string)reader["Name"];
+                        string nic = (string)reader["NIC"];
+                        string type = (string)reader["Type"];
+
+                        userNameLabel.Text = userName;
+                        nicLabel.Text = nic;
+                        typeLabel.Text = type;
+                    }
+
+                    // enable issue book text box
+                    bookIdTextBox.Enabled = true;
+                    bookIdTextBox.Focus();
+                }
+                else
+                {
+                    MessageBox.Show("Data not found in the database.");
+                    
+                }
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
+
+            //SqlDataReader reader = cmd.ExecuteReader();
+
+            //while (reader.Read())
+            //{
+            //    string userName = (string)reader["Name"];
+            //    string nic = (string)reader["NIC"];
+            //    string type = (string)reader["Type"];
+
+            //    userNameLabel.Text = userName;
+            //    nicLabel.Text = nic;
+            //    typeLabel.Text = type; 
+            //}
         }
+
+        
     }
 }
