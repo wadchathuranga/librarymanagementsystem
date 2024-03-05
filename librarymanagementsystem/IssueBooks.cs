@@ -26,6 +26,7 @@ namespace librarymanagementsystem
         private void IssueBooks_Load(object sender, EventArgs e)
         {
             bookIdTextBox.Enabled = false;
+            bookIssueButton.Enabled = false;
         }
 
 
@@ -42,7 +43,6 @@ namespace librarymanagementsystem
         {
             string userId = userIdTextBox.Text;
 
-            conn.openConnection();
             SqlCommand cmd = new SqlCommand("SELECT * FROM Users WHERE UserId = @UserId", conn.getConnection);
             cmd.Parameters.AddWithValue("@UserId", userId);
 
@@ -80,6 +80,8 @@ namespace librarymanagementsystem
                 MessageBox.Show("Error: " + ex.Message);
             }
 
+            conn.closeConnection();
+
             //SqlDataReader reader = cmd.ExecuteReader();
 
             //while (reader.Read())
@@ -94,6 +96,57 @@ namespace librarymanagementsystem
             //}
         }
 
-        
+
+        // find book button
+        private void bookFindButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string bookId = bookIdTextBox.Text;
+                
+                conn.openConnection();
+
+                SqlCommand cmd = new SqlCommand("SELECT * FROM Books WHERE BookId = @BookId", conn.getConnection);
+                cmd.Parameters.AddWithValue("@BookId", bookId);
+
+                SqlDataReader reader = cmd.ExecuteReader();
+
+
+                // If data exists
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        string title = (string)reader["Title"];
+                        string status = (string)reader["Status"];
+
+                        bookTitleLabel.Text = title;
+                        bookStatusLabel.Text = $"[{status}]";
+                    }
+
+                    // enable issue book text box
+                    bookIssueButton.Enabled = true;
+                    bookIdTextBox.Focus();
+                }
+                else
+                {
+                    MessageBox.Show("Book not found in the database.");
+                }
+                conn.closeConnection();
+            }
+            catch (Exception ex)
+            {
+                conn.closeConnection();
+                MessageBox.Show("Error: " + ex.Message);
+
+            }
+        }
+
+
+        // book issue button
+        private void bookIssueButton_Click(object sender, EventArgs e)
+        {
+            //
+        }
     }
 }
