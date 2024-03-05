@@ -131,7 +131,7 @@ namespace librarymanagementsystem
                         string status = (string)reader["Status"];
 
                         bookTitleLabel.Text = title;
-                        bookStatusLabel.Text = $"[{status}]";
+                        bookStatusLabel.Text = status;
                     }
 
                     // enable issue book text box & button
