@@ -44,7 +44,7 @@ namespace librarymanagementsystem
 
             AppDb conn = new AppDb();
             conn.openConnection();
-            SqlCommand cmd = new SqlCommand("insert into Users values (@Name, @UserId, @Sex, @Nic, @Address, @Type)", conn.getConnection);
+            SqlCommand cmd = new SqlCommand("INSERT INTO Users VALUES (@Name, @UserId, @Sex, @Nic, @Address, @Type)", conn.getConnection);
             cmd.Parameters.AddWithValue("@Name", userNameTextBox.Text);
             cmd.Parameters.AddWithValue("@UserId", userIdTextBox.Text);
             cmd.Parameters.AddWithValue("@Sex", sexComboBox.SelectedItem.ToString());
