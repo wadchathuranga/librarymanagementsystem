@@ -53,10 +53,10 @@ namespace librarymanagementsystem
                 string userId = userIdTextBox.Text;
 
                 conn.openConnection();
-                SqlCommand cmd = new SqlCommand("SELECT * FROM Users WHERE UserId = @UserId", conn.getConnection);
-                cmd.Parameters.AddWithValue("@UserId", userId);
+                SqlCommand cmd1 = new SqlCommand("SELECT * FROM Users WHERE UserId = @UserId", conn.getConnection);
+                cmd1.Parameters.AddWithValue("@UserId", userId);
 
-                SqlDataReader reader = cmd.ExecuteReader();
+                SqlDataReader reader = cmd1.ExecuteReader();
 
                 // If data exists
                 if (reader.HasRows)
@@ -71,9 +71,16 @@ namespace librarymanagementsystem
                         nicLabel.Text = nic;
                         typeLabel.Text = type;
                     }
+                    conn.closeConnection();
 
+                    conn.openConnection();
                     // GET CURRENT BORROWED BOOK DETAILS OF USER
-
+                    SqlCommand getCmd = new SqlCommand("SELECT * FROM IssueBooks WHERE UserId = @UserId", conn.getConnection);
+                    getCmd.Parameters.AddWithValue("@UserId", userId);
+                    SqlDataAdapter da = new SqlDataAdapter(getCmd);
+                    DataTable dt = new DataTable();
+                    da.Fill(dt);
+                    dataGridView1.DataSource = dt;
 
                     // enable issue book text box & button
                     bookIdTextBox.Enabled = true;
@@ -85,7 +92,7 @@ namespace librarymanagementsystem
                 {
                     MessageBox.Show("Data not found in the database.");
                 }
-                conn.closeConnection();
+                    conn.closeConnection();
             }
             catch (Exception ex)
             {
@@ -157,20 +164,15 @@ namespace librarymanagementsystem
         {
             try
             {
-                string userId = userIdTextBox.Text;
-                string bookId = bookIdTextBox.Text;
-                string issueDate = issueDateLabel.Text;
-                string dueDate = dueDateLabel.Text;
-
                 conn.openConnection();
 
                 // save issue book roecord into db
                 SqlCommand book = new SqlCommand("INSERT INTO IssueBooks VALUES (@UserId, @BookId, @IssueDate, @DueDate, @ReturnDate, @Status)", conn.getConnection);
-                book.Parameters.AddWithValue("@UserId", userId);
-                book.Parameters.AddWithValue("@BookId", bookId);
-                book.Parameters.AddWithValue("@IssueDate", issueDate);
-                book.Parameters.AddWithValue("@DueDate", dueDate);
-                book.Parameters.AddWithValue("@ReturnDate", null);
+                book.Parameters.AddWithValue("@UserId", userIdTextBox.Text);
+                book.Parameters.AddWithValue("@BookId", bookIdTextBox.Text);
+                book.Parameters.AddWithValue("@IssueDate", issueDateLabel.Text);
+                book.Parameters.AddWithValue("@DueDate", dueDateLabel.Text);
+                book.Parameters.AddWithValue("@ReturnDate", "null");
                 book.Parameters.AddWithValue("@Status", "LOANED_OUT");
                 book.ExecuteNonQuery();
                 conn.closeConnection();
@@ -178,6 +180,25 @@ namespace librarymanagementsystem
             catch (Exception ex)
             {
                 conn.closeConnection();
+                MessageBox.Show("Error: " + ex.Message);
+            }
+        }
+
+
+        // find all loaned out books by user
+        private void findAllCurrentBorrowedBooks(string userId)
+        {
+            try
+            {
+                SqlCommand cmd = new SqlCommand("SELECT * FROM IssueBooks WHERE UserId = @UserId", conn.getConnection);
+                cmd.Parameters.AddWithValue("@UserId", userId);
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                dataGridView1.DataSource = dt;
+            }
+            catch (Exception ex)
+            {
                 MessageBox.Show("Error: " + ex.Message);
             }
         }
