@@ -22,7 +22,7 @@ namespace librarymanagementsystem
             // Create an instance of AddUserForm
             AddUserForm addUserForm = new AddUserForm();
 
-            // Show add user form
+            // Show form
             addUserForm.Show();
         }
 
@@ -31,7 +31,7 @@ namespace librarymanagementsystem
             // Create an instance of AddBookForm
             AddBookForm addBookForm = new AddBookForm();
 
-            // Show add user form
+            // Show form
             addBookForm.Show();
         }
 
@@ -40,7 +40,7 @@ namespace librarymanagementsystem
             // Create an instance of CheckBookStatus
             CheckBookStatus checkBookStatus = new CheckBookStatus();
 
-            // Show add user form
+            // Show form
             checkBookStatus.Show();
         }
 
@@ -49,8 +49,17 @@ namespace librarymanagementsystem
             // Create an instance of IssueBooks
             IssueBooks issueBooks = new IssueBooks();
 
-            // Show add user form
+            // Show form
             issueBooks.Show();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            // Create an instance of ReturnBooks
+            ReturnBooks returnBooks = new ReturnBooks();
+
+            // Show form
+            returnBooks.Show();
         }
     }
 }
