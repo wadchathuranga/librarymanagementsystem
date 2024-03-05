@@ -73,15 +73,8 @@ namespace librarymanagementsystem
                     }
                     conn.closeConnection();
 
-                    conn.openConnection();
                     // GET CURRENT BORROWED BOOK DETAILS OF USER
-                    SqlCommand getCmd = new SqlCommand("SELECT * FROM IssueBooks WHERE UserId = @UserId", conn.getConnection);
-                    getCmd.Parameters.AddWithValue("@UserId", userId);
-                    SqlDataAdapter da = new SqlDataAdapter(getCmd);
-                    DataTable dt = new DataTable();
-                    da.Fill(dt);
-                    dataGridView1.DataSource = dt;
-                    conn.closeConnection();
+                    findAllCurrentBorrowedBooks(userId);
 
                     // enable issue book text box & button
                     bookIdTextBox.Enabled = true;
@@ -164,18 +157,26 @@ namespace librarymanagementsystem
         {
             try
             {
-                conn.openConnection();
+                string userId = userIdTextBox.Text;
+                string bookId = bookIdTextBox.Text;
 
                 // save issue book roecord into db
+                conn.openConnection();
                 SqlCommand book = new SqlCommand("INSERT INTO IssueBooks VALUES (@UserId, @BookId, @IssueDate, @DueDate, @ReturnDate, @Status)", conn.getConnection);
-                book.Parameters.AddWithValue("@UserId", userIdTextBox.Text);
-                book.Parameters.AddWithValue("@BookId", bookIdTextBox.Text);
+                book.Parameters.AddWithValue("@UserId", userId);
+                book.Parameters.AddWithValue("@BookId", bookId);
                 book.Parameters.AddWithValue("@IssueDate", issueDateLabel.Text);
                 book.Parameters.AddWithValue("@DueDate", dueDateLabel.Text);
                 book.Parameters.AddWithValue("@ReturnDate", "null");
                 book.Parameters.AddWithValue("@Status", "LOANED_OUT");
                 book.ExecuteNonQuery();
                 conn.closeConnection();
+
+                // UPDATE STATUS OF BOOK
+                updateBookStatus(bookId);
+
+                // FETCH CURRENT LOANED OUT BOOKS
+                findAllCurrentBorrowedBooks(userId);
             }
             catch (Exception ex)
             {
@@ -190,15 +191,38 @@ namespace librarymanagementsystem
         {
             try
             {
-                SqlCommand cmd = new SqlCommand("SELECT * FROM IssueBooks WHERE UserId = @UserId", conn.getConnection);
-                cmd.Parameters.AddWithValue("@UserId", userId);
-                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                conn.openConnection();
+                SqlCommand getCmd = new SqlCommand("SELECT * FROM IssueBooks WHERE UserId = @UserId", conn.getConnection);
+                getCmd.Parameters.AddWithValue("@UserId", userId);
+                SqlDataAdapter da = new SqlDataAdapter(getCmd);
                 DataTable dt = new DataTable();
                 da.Fill(dt);
                 dataGridView1.DataSource = dt;
+                conn.closeConnection();
             }
             catch (Exception ex)
             {
+                conn.closeConnection();
+                MessageBox.Show("Error: " + ex.Message);
+            }
+        }
+
+
+        // Update book status ["Reference", "Borrowable", "Loaned_Out"]
+        private void updateBookStatus(string bookId)
+        {
+            try
+            {
+                conn.openConnection();
+                SqlCommand updateCmd = new SqlCommand("UPDATE Books SET Status = @Status WHERE BookId = @BookId", conn.getConnection);
+                updateCmd.Parameters.AddWithValue("@Status", "Loaned_Out");
+                updateCmd.Parameters.AddWithValue("@BookId", bookId);
+                updateCmd.ExecuteNonQuery();
+                conn.closeConnection();
+            }
+            catch (Exception ex)
+            {
+                conn.closeConnection();
                 MessageBox.Show("Error: " + ex.Message);
             }
         }
