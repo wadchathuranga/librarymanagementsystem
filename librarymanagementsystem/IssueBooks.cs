@@ -29,9 +29,6 @@ namespace librarymanagementsystem
             bookIssueButton.Enabled = false;
             bookFindButton.Enabled = false;
 
-            // Get the current date
-            DateTime currentDate = DateTime.Now;
-
             // set issue date
             issueDateLabel.Text = DateTime.Now.ToString("yyyy-MM-dd");
 
@@ -75,6 +72,9 @@ namespace librarymanagementsystem
                         typeLabel.Text = type;
                     }
 
+                    // GET CURRENT BORROWED BOOK DETAILS OF USER
+
+
                     // enable issue book text box & button
                     bookIdTextBox.Enabled = true;
                     bookIdTextBox.Focus();
@@ -84,7 +84,6 @@ namespace librarymanagementsystem
                 else
                 {
                     MessageBox.Show("Data not found in the database.");
-                    
                 }
                 conn.closeConnection();
             }
