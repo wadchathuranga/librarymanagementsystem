@@ -49,6 +49,9 @@
             this.nicLabel = new System.Windows.Forms.Label();
             this.librarysystemDataSet1 = new librarymanagementsystem.librarysystemDataSet();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.bookFindButton = new System.Windows.Forms.Button();
+            this.backButton = new System.Windows.Forms.Button();
+            this.bookIssueButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.librarysystemDataSet1)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -80,7 +83,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(24, 149);
+            this.label3.Location = new System.Drawing.Point(24, 243);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(60, 20);
             this.label3.TabIndex = 2;
@@ -91,7 +94,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(24, 184);
+            this.label4.Location = new System.Drawing.Point(24, 278);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(90, 20);
             this.label4.TabIndex = 3;
@@ -102,7 +105,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(24, 218);
+            this.label5.Location = new System.Drawing.Point(24, 312);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(81, 20);
             this.label5.TabIndex = 4;
@@ -112,7 +115,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(25, 327);
+            this.label6.Location = new System.Drawing.Point(413, 400);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(94, 16);
             this.label6.TabIndex = 5;
@@ -121,7 +124,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(25, 356);
+            this.label7.Location = new System.Drawing.Point(563, 400);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(44, 16);
             this.label7.TabIndex = 6;
@@ -129,14 +132,14 @@
             // 
             // userIdTextBox
             // 
-            this.userIdTextBox.Location = new System.Drawing.Point(101, 85);
+            this.userIdTextBox.Location = new System.Drawing.Point(144, 87);
             this.userIdTextBox.Name = "userIdTextBox";
             this.userIdTextBox.Size = new System.Drawing.Size(100, 22);
             this.userIdTextBox.TabIndex = 7;
             // 
             // bookIdTextBox
             // 
-            this.bookIdTextBox.Location = new System.Drawing.Point(161, 149);
+            this.bookIdTextBox.Location = new System.Drawing.Point(144, 243);
             this.bookIdTextBox.Name = "bookIdTextBox";
             this.bookIdTextBox.Size = new System.Drawing.Size(100, 22);
             this.bookIdTextBox.TabIndex = 8;
@@ -144,7 +147,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(158, 188);
+            this.label8.Location = new System.Drawing.Point(128, 282);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(176, 16);
             this.label8.TabIndex = 9;
@@ -153,7 +156,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(158, 222);
+            this.label9.Location = new System.Drawing.Point(128, 316);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(197, 16);
             this.label9.TabIndex = 10;
@@ -161,7 +164,7 @@
             // 
             // findUserButton
             // 
-            this.findUserButton.Location = new System.Drawing.Point(220, 85);
+            this.findUserButton.Location = new System.Drawing.Point(250, 87);
             this.findUserButton.Name = "findUserButton";
             this.findUserButton.Size = new System.Drawing.Size(75, 23);
             this.findUserButton.TabIndex = 11;
@@ -172,17 +175,17 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(386, 278);
+            this.dataGridView1.Location = new System.Drawing.Point(390, 113);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(402, 160);
+            this.dataGridView1.Size = new System.Drawing.Size(402, 192);
             this.dataGridView1.TabIndex = 15;
             // 
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(497, 213);
+            this.label13.Location = new System.Drawing.Point(434, 353);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(106, 16);
             this.label13.TabIndex = 16;
@@ -191,7 +194,7 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(497, 256);
+            this.label14.Location = new System.Drawing.Point(516, 87);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(160, 16);
             this.label14.TabIndex = 17;
@@ -201,7 +204,7 @@
             // userNameLabel
             // 
             this.userNameLabel.AutoSize = true;
-            this.userNameLabel.Location = new System.Drawing.Point(38, 33);
+            this.userNameLabel.Location = new System.Drawing.Point(24, 33);
             this.userNameLabel.Name = "userNameLabel";
             this.userNameLabel.Size = new System.Drawing.Size(67, 16);
             this.userNameLabel.TabIndex = 18;
@@ -211,7 +214,7 @@
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(626, 213);
+            this.label16.Location = new System.Drawing.Point(563, 353);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(42, 16);
             this.label16.TabIndex = 21;
@@ -220,7 +223,7 @@
             // typeLabel
             // 
             this.typeLabel.AutoSize = true;
-            this.typeLabel.Location = new System.Drawing.Point(285, 33);
+            this.typeLabel.Location = new System.Drawing.Point(225, 33);
             this.typeLabel.Name = "typeLabel";
             this.typeLabel.Size = new System.Drawing.Size(33, 16);
             this.typeLabel.TabIndex = 20;
@@ -230,7 +233,7 @@
             // nicLabel
             // 
             this.nicLabel.AutoSize = true;
-            this.nicLabel.Location = new System.Drawing.Point(171, 33);
+            this.nicLabel.Location = new System.Drawing.Point(134, 33);
             this.nicLabel.Name = "nicLabel";
             this.nicLabel.Size = new System.Drawing.Size(45, 16);
             this.nicLabel.TabIndex = 19;
@@ -247,18 +250,49 @@
             this.groupBox1.Controls.Add(this.typeLabel);
             this.groupBox1.Controls.Add(this.nicLabel);
             this.groupBox1.Controls.Add(this.userNameLabel);
-            this.groupBox1.Location = new System.Drawing.Point(386, 76);
+            this.groupBox1.Location = new System.Drawing.Point(28, 126);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(385, 74);
+            this.groupBox1.Size = new System.Drawing.Size(297, 74);
             this.groupBox1.TabIndex = 22;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "User Info";
+            // 
+            // bookFindButton
+            // 
+            this.bookFindButton.Location = new System.Drawing.Point(250, 243);
+            this.bookFindButton.Name = "bookFindButton";
+            this.bookFindButton.Size = new System.Drawing.Size(75, 23);
+            this.bookFindButton.TabIndex = 21;
+            this.bookFindButton.Text = "Add";
+            this.bookFindButton.UseVisualStyleBackColor = true;
+            // 
+            // backButton
+            // 
+            this.backButton.Location = new System.Drawing.Point(28, 357);
+            this.backButton.Name = "backButton";
+            this.backButton.Size = new System.Drawing.Size(128, 39);
+            this.backButton.TabIndex = 23;
+            this.backButton.Text = "Back";
+            this.backButton.UseVisualStyleBackColor = true;
+            this.backButton.Click += new System.EventHandler(this.backButton_Click);
+            // 
+            // bookIssueButton
+            // 
+            this.bookIssueButton.Location = new System.Drawing.Point(167, 357);
+            this.bookIssueButton.Name = "bookIssueButton";
+            this.bookIssueButton.Size = new System.Drawing.Size(158, 39);
+            this.bookIssueButton.TabIndex = 24;
+            this.bookIssueButton.Text = "Issue";
+            this.bookIssueButton.UseVisualStyleBackColor = true;
             // 
             // IssueBooks
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(804, 453);
+            this.Controls.Add(this.bookIssueButton);
+            this.Controls.Add(this.backButton);
+            this.Controls.Add(this.bookFindButton);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label16);
             this.Controls.Add(this.label14);
@@ -311,5 +345,8 @@
         private System.Windows.Forms.Label nicLabel;
         private librarysystemDataSet librarysystemDataSet1;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Button bookFindButton;
+        private System.Windows.Forms.Button backButton;
+        private System.Windows.Forms.Button bookIssueButton;
     }
 }

@@ -21,13 +21,23 @@ namespace librarymanagementsystem
             InitializeComponent();
         }
 
+
         // when issue books loading
         private void IssueBooks_Load(object sender, EventArgs e)
         {
             bookIdTextBox.Enabled = false;
         }
 
-        // find user button method
+
+        // back button
+        private void backButton_Click(object sender, EventArgs e)
+        {
+            // Close the current form
+            this.Close();
+        }
+
+
+        // find user button
         private void findUserButton_Click(object sender, EventArgs e)
         {
             string userId = userIdTextBox.Text;
