@@ -20,7 +20,7 @@ namespace librarymanagementsystem
 
         // Declare variables to store data from the clicked row
         string bookId;
-        string title;
+        string userId;
 
         public ReturnBooks()
         {
@@ -49,7 +49,7 @@ namespace librarymanagementsystem
         {
             try
             {
-                string userId = userIdTextBox.Text;
+                userId = userIdTextBox.Text;
 
                 conn.openConnection();
                 SqlCommand cmd1 = new SqlCommand("SELECT * FROM Users WHERE UserId = @UserId", conn.getConnection);
@@ -145,8 +145,11 @@ namespace librarymanagementsystem
                 updateCmd.ExecuteNonQuery();
                 conn.closeConnection();
 
-                // update book statu in Books table
+                // update book status in Books table
                 updateBookStatus(bookId);
+
+                // fetch current status pf user loaned_out books
+                findAllCurrentBorrowedBooks(userId);
             }
             catch (Exception ex)
             {
