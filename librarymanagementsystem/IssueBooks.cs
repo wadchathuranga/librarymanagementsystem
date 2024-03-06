@@ -92,19 +92,6 @@ namespace librarymanagementsystem
                 conn.closeConnection();
                 MessageBox.Show("Error: " + ex.Message);
             }
-
-            //SqlDataReader reader = cmd.ExecuteReader();
-
-            //while (reader.Read())
-            //{
-            //    string userName = (string)reader["Name"];
-            //    string nic = (string)reader["NIC"];
-            //    string type = (string)reader["Type"];
-
-            //    userNameLabel.Text = userName;
-            //    nicLabel.Text = nic;
-            //    typeLabel.Text = type; 
-            //}
         }
 
 
