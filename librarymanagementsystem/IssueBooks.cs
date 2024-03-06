@@ -225,7 +225,9 @@ namespace librarymanagementsystem
         // clear inputs
         private void clearInputs()
         {
-            throw new NotImplementedException();
+            bookIdTextBox.Clear();
+            bookTitleLabel.ResetText();
+            bookStatusLabel.ResetText();
         }
     }
 }
