@@ -155,7 +155,7 @@ namespace librarymanagementsystem
                 book.Parameters.AddWithValue("@IssueDate", issueDateLabel.Text);
                 book.Parameters.AddWithValue("@DueDate", dueDateLabel.Text);
                 book.Parameters.AddWithValue("@ReturnDate", "null");
-                book.Parameters.AddWithValue("@Status", "LOANED_OUT");
+                book.Parameters.AddWithValue("@Status", "Loaned_Out");
                 book.ExecuteNonQuery();
                 conn.closeConnection();
 

@@ -162,7 +162,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(780, 183);
+            this.dataGridView1.Size = new System.Drawing.Size(780, 186);
             this.dataGridView1.TabIndex = 15;
             // 
             // bookStatusLabel
