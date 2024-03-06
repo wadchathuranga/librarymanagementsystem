@@ -181,7 +181,7 @@ namespace librarymanagementsystem
             try
             {
                 conn.openConnection();
-                SqlCommand getCmd = new SqlCommand("SELECT * FROM IssueBooks WHERE UserId = @UserId  AND Status = @Status", conn.getConnection);
+                SqlCommand getCmd = new SqlCommand("SELECT * FROM IssueBooks WHERE UserId = @UserId AND Status = @Status", conn.getConnection);
                 getCmd.Parameters.AddWithValue("@UserId", userId);
                 getCmd.Parameters.AddWithValue("@Status", "Loaned_Out");
 
