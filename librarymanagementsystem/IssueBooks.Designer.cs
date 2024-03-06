@@ -51,6 +51,8 @@
             this.backButton = new System.Windows.Forms.Button();
             this.bookIssueButton = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.librarysystemDataSet1)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -168,11 +170,12 @@
             // bookStatusLabel
             // 
             this.bookStatusLabel.AutoSize = true;
-            this.bookStatusLabel.Location = new System.Drawing.Point(24, 49);
+            this.bookStatusLabel.Location = new System.Drawing.Point(77, 49);
             this.bookStatusLabel.Name = "bookStatusLabel";
             this.bookStatusLabel.Size = new System.Drawing.Size(42, 16);
             this.bookStatusLabel.TabIndex = 16;
-            this.bookStatusLabel.Text = "status";
+            this.bookStatusLabel.Text = "#####";
+            this.bookStatusLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label14
             // 
@@ -198,11 +201,12 @@
             // bookTitleLabel
             // 
             this.bookTitleLabel.AutoSize = true;
-            this.bookTitleLabel.Location = new System.Drawing.Point(24, 25);
+            this.bookTitleLabel.Location = new System.Drawing.Point(77, 25);
             this.bookTitleLabel.Name = "bookTitleLabel";
-            this.bookTitleLabel.Size = new System.Drawing.Size(62, 16);
+            this.bookTitleLabel.Size = new System.Drawing.Size(42, 16);
             this.bookTitleLabel.TabIndex = 21;
-            this.bookTitleLabel.Text = "book-title";
+            this.bookTitleLabel.Text = "#####";
+            this.bookTitleLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // typeLabel
             // 
@@ -273,6 +277,8 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.label7);
+            this.groupBox2.Controls.Add(this.label6);
             this.groupBox2.Controls.Add(this.bookTitleLabel);
             this.groupBox2.Controls.Add(this.bookStatusLabel);
             this.groupBox2.Location = new System.Drawing.Point(408, 101);
@@ -281,6 +287,24 @@
             this.groupBox2.TabIndex = 25;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Book Info";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(22, 25);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(45, 20);
+            this.label6.TabIndex = 26;
+            this.label6.Text = "Title:";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(22, 49);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(59, 20);
+            this.label7.TabIndex = 27;
+            this.label7.Text = "Status:";
             // 
             // IssueBooks
             // 
@@ -343,5 +367,7 @@
         private System.Windows.Forms.Button backButton;
         private System.Windows.Forms.Button bookIssueButton;
         private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label6;
     }
 }

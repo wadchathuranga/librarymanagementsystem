@@ -40,7 +40,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(221, 30);
+            this.label1.Location = new System.Drawing.Point(217, 52);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(344, 25);
             this.label1.TabIndex = 0;
@@ -50,9 +50,9 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(215, 167);
+            this.button1.Location = new System.Drawing.Point(230, 142);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(145, 47);
+            this.button1.Size = new System.Drawing.Size(145, 87);
             this.button1.TabIndex = 1;
             this.button1.Text = "Register User";
             this.button1.UseVisualStyleBackColor = true;
@@ -61,9 +61,9 @@
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(395, 167);
+            this.button2.Location = new System.Drawing.Point(410, 142);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(145, 47);
+            this.button2.Size = new System.Drawing.Size(145, 87);
             this.button2.TabIndex = 2;
             this.button2.Text = "Add New Book";
             this.button2.UseVisualStyleBackColor = true;
@@ -72,9 +72,9 @@
             // button3
             // 
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(113, 260);
+            this.button3.Location = new System.Drawing.Point(131, 284);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(185, 47);
+            this.button3.Size = new System.Drawing.Size(185, 97);
             this.button3.TabIndex = 3;
             this.button3.Text = "Check Book Status";
             this.button3.UseVisualStyleBackColor = true;
@@ -83,9 +83,9 @@
             // button4
             // 
             this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(335, 260);
+            this.button4.Location = new System.Drawing.Point(353, 284);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(127, 47);
+            this.button4.Size = new System.Drawing.Size(127, 97);
             this.button4.TabIndex = 4;
             this.button4.Text = "Issue Books";
             this.button4.UseVisualStyleBackColor = true;
@@ -94,9 +94,9 @@
             // button5
             // 
             this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.Location = new System.Drawing.Point(499, 260);
+            this.button5.Location = new System.Drawing.Point(517, 284);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(148, 47);
+            this.button5.Size = new System.Drawing.Size(148, 97);
             this.button5.TabIndex = 5;
             this.button5.Text = "Return Books";
             this.button5.UseVisualStyleBackColor = true;

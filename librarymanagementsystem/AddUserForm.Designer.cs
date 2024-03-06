@@ -149,9 +149,9 @@
             this.cancelButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cancelButton.Location = new System.Drawing.Point(213, 463);
             this.cancelButton.Name = "cancelButton";
-            this.cancelButton.Size = new System.Drawing.Size(178, 41);
+            this.cancelButton.Size = new System.Drawing.Size(178, 59);
             this.cancelButton.TabIndex = 14;
-            this.cancelButton.Text = "Cancel";
+            this.cancelButton.Text = "Back";
             this.cancelButton.UseVisualStyleBackColor = true;
             this.cancelButton.Click += new System.EventHandler(this.cancelButton_Click);
             // 
@@ -160,7 +160,7 @@
             this.submitButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.submitButton.Location = new System.Drawing.Point(412, 463);
             this.submitButton.Name = "submitButton";
-            this.submitButton.Size = new System.Drawing.Size(194, 41);
+            this.submitButton.Size = new System.Drawing.Size(194, 59);
             this.submitButton.TabIndex = 15;
             this.submitButton.Text = "Submit";
             this.submitButton.UseVisualStyleBackColor = true;

@@ -39,12 +39,12 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label14 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.todateDateLabel = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.bookIdLabel = new System.Windows.Forms.Label();
             this.backButton = new System.Windows.Forms.Button();
             this.returnBooksButton = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.todateDateLabel = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -167,14 +167,41 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Return Book Info";
             // 
+            // todateDateLabel
+            // 
+            this.todateDateLabel.AutoSize = true;
+            this.todateDateLabel.Location = new System.Drawing.Point(117, 53);
+            this.todateDateLabel.Name = "todateDateLabel";
+            this.todateDateLabel.Size = new System.Drawing.Size(53, 20);
+            this.todateDateLabel.TabIndex = 24;
+            this.todateDateLabel.Text = "#####";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(25, 53);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(81, 16);
+            this.label4.TabIndex = 23;
+            this.label4.Text = "Return Date:";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(25, 29);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(53, 16);
+            this.label3.TabIndex = 22;
+            this.label3.Text = "BookId:";
+            // 
             // bookIdLabel
             // 
             this.bookIdLabel.AutoSize = true;
             this.bookIdLabel.Location = new System.Drawing.Point(117, 29);
             this.bookIdLabel.Name = "bookIdLabel";
-            this.bookIdLabel.Size = new System.Drawing.Size(53, 16);
+            this.bookIdLabel.Size = new System.Drawing.Size(53, 20);
             this.bookIdLabel.TabIndex = 16;
-            this.bookIdLabel.Text = "book-id";
+            this.bookIdLabel.Text = "#####";
             // 
             // backButton
             // 
@@ -195,33 +222,6 @@
             this.returnBooksButton.Text = "Return Book";
             this.returnBooksButton.UseVisualStyleBackColor = true;
             this.returnBooksButton.Click += new System.EventHandler(this.returnBooksButton_Click);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(25, 29);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(53, 16);
-            this.label3.TabIndex = 22;
-            this.label3.Text = "BookId:";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(25, 53);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(81, 16);
-            this.label4.TabIndex = 23;
-            this.label4.Text = "Return Date:";
-            // 
-            // todateDateLabel
-            // 
-            this.todateDateLabel.AutoSize = true;
-            this.todateDateLabel.Location = new System.Drawing.Point(117, 53);
-            this.todateDateLabel.Name = "todateDateLabel";
-            this.todateDateLabel.Size = new System.Drawing.Size(90, 20);
-            this.todateDateLabel.TabIndex = 24;
-            this.todateDateLabel.Text = "today-date";
             // 
             // ReturnBooks
             // 
