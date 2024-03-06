@@ -153,6 +153,9 @@ namespace librarymanagementsystem
 
                 // fetch current status pf user loaned_out books
                 findAllCurrentBorrowedBooks(userId);
+
+                // clear inputs
+                clearInputs();
             }
             catch (Exception ex)
             {
