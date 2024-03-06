@@ -121,7 +121,7 @@ namespace librarymanagementsystem
             {
                 // Get data from the clicked row
                 DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
-                string bookId = row.Cells["BookId"].Value.ToString();
+                bookId = row.Cells["BookId"].Value.ToString();
 
                 bookIdLabel.Text = bookId;
 
@@ -134,31 +134,38 @@ namespace librarymanagementsystem
         // books return button
         private void returnBooksButton_Click(object sender, EventArgs e)
         {
-            // update IssueBooks table
-
-
-            // update book statu in Books table
-
-        }
-
-
-        // Update book status ["Borrowable", "LOANED_OUT"]
-        private void updateBookStatus(string bookId)
-        {
             try
             {
+                // update IssueBooks table
                 conn.openConnection();
-                SqlCommand updateCmd = new SqlCommand("UPDATE Books SET Status = @Status WHERE BookId = @BookId", conn.getConnection);
-                updateCmd.Parameters.AddWithValue("@Status", "Loaned_Out");
+                SqlCommand updateCmd = new SqlCommand("UPDATE IssueBooks SET ReturnDate = @ReturnDate, Status = @Status WHERE BookId = @BookId", conn.getConnection);
+                updateCmd.Parameters.AddWithValue("@Status", "Returned");
+                updateCmd.Parameters.AddWithValue("@ReturnDate", todateDateLabel.Text);
                 updateCmd.Parameters.AddWithValue("@BookId", bookId);
                 updateCmd.ExecuteNonQuery();
                 conn.closeConnection();
+
+                // update book statu in Books table
+                updateBookStatus(bookId);
             }
             catch (Exception ex)
             {
                 conn.closeConnection();
                 MessageBox.Show("Error: " + ex.Message);
             }
+            
+        }
+
+
+        // Update book status ["Borrowable", "LOANED_OUT"]
+        private void updateBookStatus(string bookId)
+        {
+            conn.openConnection();
+            SqlCommand updateCmd = new SqlCommand("UPDATE Books SET Status = @Status WHERE BookId = @BookId", conn.getConnection);
+            updateCmd.Parameters.AddWithValue("@Status", "Borrowable");
+            updateCmd.Parameters.AddWithValue("@BookId", bookId);
+            updateCmd.ExecuteNonQuery();
+            conn.closeConnection();
         }
     }
 }
