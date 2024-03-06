@@ -39,10 +39,12 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label14 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.bookTitleLabel = new System.Windows.Forms.Label();
             this.bookIdLabel = new System.Windows.Forms.Label();
             this.backButton = new System.Windows.Forms.Button();
             this.returnBooksButton = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.todateDateLabel = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -154,28 +156,21 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.bookTitleLabel);
+            this.groupBox2.Controls.Add(this.todateDateLabel);
+            this.groupBox2.Controls.Add(this.label4);
+            this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.bookIdLabel);
-            this.groupBox2.Location = new System.Drawing.Point(411, 84);
+            this.groupBox2.Location = new System.Drawing.Point(411, 75);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(368, 76);
+            this.groupBox2.Size = new System.Drawing.Size(368, 85);
             this.groupBox2.TabIndex = 29;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Return Book Info";
             // 
-            // bookTitleLabel
-            // 
-            this.bookTitleLabel.AutoSize = true;
-            this.bookTitleLabel.Location = new System.Drawing.Point(25, 47);
-            this.bookTitleLabel.Name = "bookTitleLabel";
-            this.bookTitleLabel.Size = new System.Drawing.Size(62, 16);
-            this.bookTitleLabel.TabIndex = 21;
-            this.bookTitleLabel.Text = "book-title";
-            // 
             // bookIdLabel
             // 
             this.bookIdLabel.AutoSize = true;
-            this.bookIdLabel.Location = new System.Drawing.Point(25, 24);
+            this.bookIdLabel.Location = new System.Drawing.Point(117, 29);
             this.bookIdLabel.Name = "bookIdLabel";
             this.bookIdLabel.Size = new System.Drawing.Size(53, 16);
             this.bookIdLabel.TabIndex = 16;
@@ -201,6 +196,33 @@
             this.returnBooksButton.UseVisualStyleBackColor = true;
             this.returnBooksButton.Click += new System.EventHandler(this.returnBooksButton_Click);
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(25, 29);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(53, 16);
+            this.label3.TabIndex = 22;
+            this.label3.Text = "BookId:";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(25, 53);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(81, 16);
+            this.label4.TabIndex = 23;
+            this.label4.Text = "Return Date:";
+            // 
+            // todateDateLabel
+            // 
+            this.todateDateLabel.AutoSize = true;
+            this.todateDateLabel.Location = new System.Drawing.Point(117, 53);
+            this.todateDateLabel.Name = "todateDateLabel";
+            this.todateDateLabel.Size = new System.Drawing.Size(90, 20);
+            this.todateDateLabel.TabIndex = 24;
+            this.todateDateLabel.Text = "today-date";
+            // 
             // ReturnBooks
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -218,6 +240,7 @@
             this.Controls.Add(this.findUserButton);
             this.Name = "ReturnBooks";
             this.Text = "ReturnBooks";
+            this.Load += new System.EventHandler(this.ReturnBooks_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -241,9 +264,11 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Label bookTitleLabel;
         private System.Windows.Forms.Label bookIdLabel;
         private System.Windows.Forms.Button backButton;
         private System.Windows.Forms.Button returnBooksButton;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label todateDateLabel;
     }
 }

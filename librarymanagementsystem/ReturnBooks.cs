@@ -28,6 +28,16 @@ namespace librarymanagementsystem
         }
 
 
+        // when form loading initially
+        private void ReturnBooks_Load(object sender, EventArgs e)
+        {
+            // set system date
+            todateDateLabel.Text = DateTime.Now.ToString("yyyy-MM-dd");
+            // disable book return button
+            returnBooksButton.Enabled = false;
+        }
+
+
         // back button
         private void backButton_Click(object sender, EventArgs e)
         {
@@ -114,6 +124,9 @@ namespace librarymanagementsystem
                 string bookId = row.Cells["BookId"].Value.ToString();
 
                 bookIdLabel.Text = bookId;
+
+                // disable book return button
+                returnBooksButton.Enabled = true;
             }
         }
 
@@ -126,6 +139,26 @@ namespace librarymanagementsystem
 
             // update book statu in Books table
 
+        }
+
+
+        // Update book status ["Borrowable", "LOANED_OUT"]
+        private void updateBookStatus(string bookId)
+        {
+            try
+            {
+                conn.openConnection();
+                SqlCommand updateCmd = new SqlCommand("UPDATE Books SET Status = @Status WHERE BookId = @BookId", conn.getConnection);
+                updateCmd.Parameters.AddWithValue("@Status", "Loaned_Out");
+                updateCmd.Parameters.AddWithValue("@BookId", bookId);
+                updateCmd.ExecuteNonQuery();
+                conn.closeConnection();
+            }
+            catch (Exception ex)
+            {
+                conn.closeConnection();
+                MessageBox.Show("Error: " + ex.Message);
+            }
         }
     }
 }
