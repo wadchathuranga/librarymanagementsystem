@@ -34,6 +34,13 @@
             this.librarysystemDataSet = new librarymanagementsystem.librarysystemDataSet();
             this.booksTableAdapter = new librarymanagementsystem.librarysystemDataSetTableAdapters.BooksTableAdapter();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
+            this.idDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bookIdDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.statusDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.titleDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.authorDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.publisherDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.classificationDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.booksBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.librarysystemDataSet1 = new librarymanagementsystem.librarysystemDataSet1();
             this.booksTableAdapter1 = new librarymanagementsystem.librarysystemDataSet1TableAdapters.BooksTableAdapter();
@@ -43,13 +50,6 @@
             this.otherSearchTextBox = new System.Windows.Forms.TextBox();
             this.otherRadioButton = new System.Windows.Forms.RadioButton();
             this.bookIdRadioButton = new System.Windows.Forms.RadioButton();
-            this.idDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bookIdDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.statusDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.titleDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.authorDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.publisherDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.classificationDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.booksBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.librarysystemDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
@@ -87,6 +87,7 @@
             // 
             this.dataGridView3.AllowUserToDeleteRows = false;
             this.dataGridView3.AutoGenerateColumns = false;
+            this.dataGridView3.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView3.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idDataGridViewTextBoxColumn1,
@@ -104,6 +105,65 @@
             this.dataGridView3.RowTemplate.Height = 24;
             this.dataGridView3.Size = new System.Drawing.Size(776, 292);
             this.dataGridView3.TabIndex = 3;
+            // 
+            // idDataGridViewTextBoxColumn1
+            // 
+            this.idDataGridViewTextBoxColumn1.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn1.HeaderText = "Id";
+            this.idDataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.idDataGridViewTextBoxColumn1.Name = "idDataGridViewTextBoxColumn1";
+            this.idDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.idDataGridViewTextBoxColumn1.Visible = false;
+            // 
+            // bookIdDataGridViewTextBoxColumn1
+            // 
+            this.bookIdDataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.bookIdDataGridViewTextBoxColumn1.DataPropertyName = "BookId";
+            this.bookIdDataGridViewTextBoxColumn1.HeaderText = "BookId";
+            this.bookIdDataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.bookIdDataGridViewTextBoxColumn1.Name = "bookIdDataGridViewTextBoxColumn1";
+            this.bookIdDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.bookIdDataGridViewTextBoxColumn1.Width = 79;
+            // 
+            // statusDataGridViewTextBoxColumn1
+            // 
+            this.statusDataGridViewTextBoxColumn1.DataPropertyName = "Status";
+            this.statusDataGridViewTextBoxColumn1.HeaderText = "Status";
+            this.statusDataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.statusDataGridViewTextBoxColumn1.Name = "statusDataGridViewTextBoxColumn1";
+            this.statusDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // titleDataGridViewTextBoxColumn1
+            // 
+            this.titleDataGridViewTextBoxColumn1.DataPropertyName = "Title";
+            this.titleDataGridViewTextBoxColumn1.HeaderText = "Title";
+            this.titleDataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.titleDataGridViewTextBoxColumn1.Name = "titleDataGridViewTextBoxColumn1";
+            this.titleDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // authorDataGridViewTextBoxColumn1
+            // 
+            this.authorDataGridViewTextBoxColumn1.DataPropertyName = "Author";
+            this.authorDataGridViewTextBoxColumn1.HeaderText = "Author";
+            this.authorDataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.authorDataGridViewTextBoxColumn1.Name = "authorDataGridViewTextBoxColumn1";
+            this.authorDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // publisherDataGridViewTextBoxColumn1
+            // 
+            this.publisherDataGridViewTextBoxColumn1.DataPropertyName = "Publisher";
+            this.publisherDataGridViewTextBoxColumn1.HeaderText = "Publisher";
+            this.publisherDataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.publisherDataGridViewTextBoxColumn1.Name = "publisherDataGridViewTextBoxColumn1";
+            this.publisherDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // classificationDataGridViewTextBoxColumn1
+            // 
+            this.classificationDataGridViewTextBoxColumn1.DataPropertyName = "Classification";
+            this.classificationDataGridViewTextBoxColumn1.HeaderText = "Classification";
+            this.classificationDataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.classificationDataGridViewTextBoxColumn1.Name = "classificationDataGridViewTextBoxColumn1";
+            this.classificationDataGridViewTextBoxColumn1.ReadOnly = true;
             // 
             // booksBindingSource1
             // 
@@ -184,71 +244,6 @@
             this.bookIdRadioButton.Text = "BookId";
             this.bookIdRadioButton.UseVisualStyleBackColor = true;
             this.bookIdRadioButton.CheckedChanged += new System.EventHandler(this.bookIdRadioButton_CheckedChanged);
-            // 
-            // idDataGridViewTextBoxColumn1
-            // 
-            this.idDataGridViewTextBoxColumn1.DataPropertyName = "Id";
-            this.idDataGridViewTextBoxColumn1.HeaderText = "Id";
-            this.idDataGridViewTextBoxColumn1.MinimumWidth = 6;
-            this.idDataGridViewTextBoxColumn1.Name = "idDataGridViewTextBoxColumn1";
-            this.idDataGridViewTextBoxColumn1.ReadOnly = true;
-            this.idDataGridViewTextBoxColumn1.Visible = false;
-            this.idDataGridViewTextBoxColumn1.Width = 125;
-            // 
-            // bookIdDataGridViewTextBoxColumn1
-            // 
-            this.bookIdDataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.bookIdDataGridViewTextBoxColumn1.DataPropertyName = "BookId";
-            this.bookIdDataGridViewTextBoxColumn1.HeaderText = "BookId";
-            this.bookIdDataGridViewTextBoxColumn1.MinimumWidth = 6;
-            this.bookIdDataGridViewTextBoxColumn1.Name = "bookIdDataGridViewTextBoxColumn1";
-            this.bookIdDataGridViewTextBoxColumn1.ReadOnly = true;
-            this.bookIdDataGridViewTextBoxColumn1.Width = 79;
-            // 
-            // statusDataGridViewTextBoxColumn1
-            // 
-            this.statusDataGridViewTextBoxColumn1.DataPropertyName = "Status";
-            this.statusDataGridViewTextBoxColumn1.HeaderText = "Status";
-            this.statusDataGridViewTextBoxColumn1.MinimumWidth = 6;
-            this.statusDataGridViewTextBoxColumn1.Name = "statusDataGridViewTextBoxColumn1";
-            this.statusDataGridViewTextBoxColumn1.ReadOnly = true;
-            this.statusDataGridViewTextBoxColumn1.Width = 73;
-            // 
-            // titleDataGridViewTextBoxColumn1
-            // 
-            this.titleDataGridViewTextBoxColumn1.DataPropertyName = "Title";
-            this.titleDataGridViewTextBoxColumn1.HeaderText = "Title";
-            this.titleDataGridViewTextBoxColumn1.MinimumWidth = 6;
-            this.titleDataGridViewTextBoxColumn1.Name = "titleDataGridViewTextBoxColumn1";
-            this.titleDataGridViewTextBoxColumn1.ReadOnly = true;
-            this.titleDataGridViewTextBoxColumn1.Width = 125;
-            // 
-            // authorDataGridViewTextBoxColumn1
-            // 
-            this.authorDataGridViewTextBoxColumn1.DataPropertyName = "Author";
-            this.authorDataGridViewTextBoxColumn1.HeaderText = "Author";
-            this.authorDataGridViewTextBoxColumn1.MinimumWidth = 6;
-            this.authorDataGridViewTextBoxColumn1.Name = "authorDataGridViewTextBoxColumn1";
-            this.authorDataGridViewTextBoxColumn1.ReadOnly = true;
-            this.authorDataGridViewTextBoxColumn1.Width = 125;
-            // 
-            // publisherDataGridViewTextBoxColumn1
-            // 
-            this.publisherDataGridViewTextBoxColumn1.DataPropertyName = "Publisher";
-            this.publisherDataGridViewTextBoxColumn1.HeaderText = "Publisher";
-            this.publisherDataGridViewTextBoxColumn1.MinimumWidth = 6;
-            this.publisherDataGridViewTextBoxColumn1.Name = "publisherDataGridViewTextBoxColumn1";
-            this.publisherDataGridViewTextBoxColumn1.ReadOnly = true;
-            this.publisherDataGridViewTextBoxColumn1.Width = 125;
-            // 
-            // classificationDataGridViewTextBoxColumn1
-            // 
-            this.classificationDataGridViewTextBoxColumn1.DataPropertyName = "Classification";
-            this.classificationDataGridViewTextBoxColumn1.HeaderText = "Classification";
-            this.classificationDataGridViewTextBoxColumn1.MinimumWidth = 6;
-            this.classificationDataGridViewTextBoxColumn1.Name = "classificationDataGridViewTextBoxColumn1";
-            this.classificationDataGridViewTextBoxColumn1.ReadOnly = true;
-            this.classificationDataGridViewTextBoxColumn1.Width = 125;
             // 
             // CheckBookStatus
             // 
