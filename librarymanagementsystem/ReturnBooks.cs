@@ -173,5 +173,13 @@ namespace librarymanagementsystem
             updateCmd.ExecuteNonQuery();
             conn.closeConnection();
         }
+
+
+        // clear inputs
+        private void clearInputs()
+        {
+            bookIdLabel.ResetText();
+            todateDateLabel.ResetText();
+        }
     }
 }
