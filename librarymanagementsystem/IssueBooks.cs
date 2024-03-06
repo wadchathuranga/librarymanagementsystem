@@ -165,7 +165,8 @@ namespace librarymanagementsystem
                 // FETCH CURRENT LOANED OUT BOOKS
                 findAllCurrentBorrowedBooks(userId);
 
-                // clear the book section data ================================================================
+                // clear the book section data 
+                clearInputs();
             }
             catch (Exception ex)
             {
@@ -218,6 +219,13 @@ namespace librarymanagementsystem
                 conn.closeConnection();
                 MessageBox.Show("Error: " + ex.Message);
             }
+        }
+
+
+        // clear inputs
+        private void clearInputs()
+        {
+            throw new NotImplementedException();
         }
     }
 }
