@@ -164,6 +164,8 @@ namespace librarymanagementsystem
 
                 // FETCH CURRENT LOANED OUT BOOKS
                 findAllCurrentBorrowedBooks(userId);
+
+                // clear the book section data ================================================================
             }
             catch (Exception ex)
             {
@@ -173,14 +175,16 @@ namespace librarymanagementsystem
         }
 
 
-        // find all loaned out books by user
+        // find all loaned out books by user and status
         private void findAllCurrentBorrowedBooks(string userId)
         {
             try
             {
                 conn.openConnection();
-                SqlCommand getCmd = new SqlCommand("SELECT * FROM IssueBooks WHERE UserId = @UserId", conn.getConnection);
+                SqlCommand getCmd = new SqlCommand("SELECT * FROM IssueBooks WHERE UserId = @UserId  AND Status = @Status", conn.getConnection);
                 getCmd.Parameters.AddWithValue("@UserId", userId);
+                getCmd.Parameters.AddWithValue("@Status", "Loaned_Out");
+
                 SqlDataAdapter da = new SqlDataAdapter(getCmd);
                 DataTable dt = new DataTable();
                 da.Fill(dt);

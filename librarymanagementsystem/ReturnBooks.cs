@@ -89,14 +89,15 @@ namespace librarymanagementsystem
         }
 
 
-        // find all loaned out books by user
+        // find all loaned out books by user and status
         private void findAllCurrentBorrowedBooks(string userId)
         {
             try
             {
                 conn.openConnection();
-                SqlCommand getCmd = new SqlCommand("SELECT * FROM IssueBooks WHERE UserId = @UserId", conn.getConnection);
+                SqlCommand getCmd = new SqlCommand("SELECT * FROM IssueBooks WHERE UserId = @UserId AND Status = @Status", conn.getConnection);
                 getCmd.Parameters.AddWithValue("@UserId", userId);
+                getCmd.Parameters.AddWithValue("@Status", "Loaned_Out");
                 SqlDataAdapter da = new SqlDataAdapter(getCmd);
                 DataTable dt = new DataTable();
                 da.Fill(dt);
@@ -123,10 +124,12 @@ namespace librarymanagementsystem
                 DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
                 bookId = row.Cells["BookId"].Value.ToString();
 
-                bookIdLabel.Text = bookId;
-
                 // disable book return button
-                returnBooksButton.Enabled = true;
+                if (bookId != "") 
+                {
+                    bookIdLabel.Text = bookId;
+                    returnBooksButton.Enabled = true;
+                }
             }
         }
 
@@ -160,7 +163,7 @@ namespace librarymanagementsystem
         }
 
 
-        // Update book status ["Borrowable", "LOANED_OUT"]
+        // Update book status ["Borrowable", "Loaned_Out"]
         private void updateBookStatus(string bookId)
         {
             conn.openConnection();
