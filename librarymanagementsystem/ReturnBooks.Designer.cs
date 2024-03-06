@@ -38,8 +38,14 @@
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label14 = new System.Windows.Forms.Label();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.bookTitleLabel = new System.Windows.Forms.Label();
+            this.bookIdLabel = new System.Windows.Forms.Label();
+            this.backButton = new System.Windows.Forms.Button();
+            this.returnBooksButton = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -49,7 +55,7 @@
             this.groupBox1.Controls.Add(this.userNameLabel);
             this.groupBox1.Location = new System.Drawing.Point(37, 116);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(331, 59);
+            this.groupBox1.Size = new System.Drawing.Size(331, 96);
             this.groupBox1.TabIndex = 26;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "User Info";
@@ -57,17 +63,17 @@
             // typeLabel
             // 
             this.typeLabel.AutoSize = true;
-            this.typeLabel.Location = new System.Drawing.Point(264, 26);
+            this.typeLabel.Location = new System.Drawing.Point(25, 60);
             this.typeLabel.Name = "typeLabel";
             this.typeLabel.Size = new System.Drawing.Size(33, 16);
             this.typeLabel.TabIndex = 20;
             this.typeLabel.Text = "type";
-            this.typeLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.typeLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // nicLabel
             // 
             this.nicLabel.AutoSize = true;
-            this.nicLabel.Location = new System.Drawing.Point(134, 26);
+            this.nicLabel.Location = new System.Drawing.Point(192, 29);
             this.nicLabel.Name = "nicLabel";
             this.nicLabel.Size = new System.Drawing.Size(45, 16);
             this.nicLabel.TabIndex = 19;
@@ -77,7 +83,7 @@
             // userNameLabel
             // 
             this.userNameLabel.AutoSize = true;
-            this.userNameLabel.Location = new System.Drawing.Point(24, 26);
+            this.userNameLabel.Location = new System.Drawing.Point(24, 29);
             this.userNameLabel.Name = "userNameLabel";
             this.userNameLabel.Size = new System.Drawing.Size(67, 16);
             this.userNameLabel.TabIndex = 18;
@@ -133,6 +139,7 @@
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(776, 172);
             this.dataGridView1.TabIndex = 27;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView1_CellClick);
             // 
             // label14
             // 
@@ -145,11 +152,63 @@
             this.label14.Text = "User\'s Loaned Out Books";
             this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.bookTitleLabel);
+            this.groupBox2.Controls.Add(this.bookIdLabel);
+            this.groupBox2.Location = new System.Drawing.Point(411, 84);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(368, 76);
+            this.groupBox2.TabIndex = 29;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Return Book Info";
+            // 
+            // bookTitleLabel
+            // 
+            this.bookTitleLabel.AutoSize = true;
+            this.bookTitleLabel.Location = new System.Drawing.Point(25, 47);
+            this.bookTitleLabel.Name = "bookTitleLabel";
+            this.bookTitleLabel.Size = new System.Drawing.Size(62, 16);
+            this.bookTitleLabel.TabIndex = 21;
+            this.bookTitleLabel.Text = "book-title";
+            // 
+            // bookIdLabel
+            // 
+            this.bookIdLabel.AutoSize = true;
+            this.bookIdLabel.Location = new System.Drawing.Point(25, 24);
+            this.bookIdLabel.Name = "bookIdLabel";
+            this.bookIdLabel.Size = new System.Drawing.Size(53, 16);
+            this.bookIdLabel.TabIndex = 16;
+            this.bookIdLabel.Text = "book-id";
+            // 
+            // backButton
+            // 
+            this.backButton.Location = new System.Drawing.Point(411, 166);
+            this.backButton.Name = "backButton";
+            this.backButton.Size = new System.Drawing.Size(167, 46);
+            this.backButton.TabIndex = 30;
+            this.backButton.Text = "Back";
+            this.backButton.UseVisualStyleBackColor = true;
+            this.backButton.Click += new System.EventHandler(this.backButton_Click);
+            // 
+            // returnBooksButton
+            // 
+            this.returnBooksButton.Location = new System.Drawing.Point(584, 166);
+            this.returnBooksButton.Name = "returnBooksButton";
+            this.returnBooksButton.Size = new System.Drawing.Size(195, 46);
+            this.returnBooksButton.TabIndex = 31;
+            this.returnBooksButton.Text = "Return Book";
+            this.returnBooksButton.UseVisualStyleBackColor = true;
+            this.returnBooksButton.Click += new System.EventHandler(this.returnBooksButton_Click);
+            // 
             // ReturnBooks
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.returnBooksButton);
+            this.Controls.Add(this.backButton);
+            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label1);
@@ -162,6 +221,8 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -179,5 +240,10 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Label bookTitleLabel;
+        private System.Windows.Forms.Label bookIdLabel;
+        private System.Windows.Forms.Button backButton;
+        private System.Windows.Forms.Button returnBooksButton;
     }
 }

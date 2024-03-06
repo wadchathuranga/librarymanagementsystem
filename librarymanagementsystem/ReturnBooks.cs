@@ -8,6 +8,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using System.Xml.Linq;
 
 namespace librarymanagementsystem
 {
@@ -16,9 +18,21 @@ namespace librarymanagementsystem
         // initialize the DB connection
         AppDb conn = new AppDb();
 
+        // Declare variables to store data from the clicked row
+        string bookId;
+        string title;
+
         public ReturnBooks()
         {
             InitializeComponent();
+        }
+
+
+        // back button
+        private void backButton_Click(object sender, EventArgs e)
+        {
+            // Close the current form
+            this.Close();
         }
 
         private void findUserButton_Click(object sender, EventArgs e)
@@ -50,11 +64,6 @@ namespace librarymanagementsystem
 
                     // GET CURRENT BORROWED BOOK DETAILS OF USER
                     findAllCurrentBorrowedBooks(userId);
-
-                    // enable issue book text box & button
-                    //bookIdTextBox.Enabled = true;
-                    //bookIdTextBox.Focus();
-                    //bookFindButton.Enabled = true;
                 }
                 else
                 {
@@ -91,6 +100,32 @@ namespace librarymanagementsystem
                 conn.closeConnection();
                 MessageBox.Show("Error: " + ex.Message);
             }
+        }
+
+
+        // cell click method
+        private void DataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            // Make sure the clicked area is a cell and not a header or anything else
+            if (e.RowIndex >= 0)
+            {
+                // Get data from the clicked row
+                DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
+                string bookId = row.Cells["BookId"].Value.ToString();
+
+                bookIdLabel.Text = bookId;
+            }
+        }
+
+
+        // books return button
+        private void returnBooksButton_Click(object sender, EventArgs e)
+        {
+            // update IssueBooks table
+
+
+            // update book statu in Books table
+
         }
     }
 }
