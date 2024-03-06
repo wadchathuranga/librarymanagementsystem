@@ -185,6 +185,8 @@ namespace librarymanagementsystem
                 DataTable dt = new DataTable();
                 da.Fill(dt);
                 dataGridView1.DataSource = dt;
+                dataGridView1.Columns["Id"].Visible = false;
+                dataGridView1.Columns["UserId"].Visible = false;
                 conn.closeConnection();
             }
             catch (Exception ex)
