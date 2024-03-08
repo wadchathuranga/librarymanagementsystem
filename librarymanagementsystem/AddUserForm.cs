@@ -53,6 +53,7 @@ namespace librarymanagementsystem
             cmd.Parameters.AddWithValue("@Type", typeComboBox.SelectedItem.ToString());
             cmd.ExecuteNonQuery();
             conn.closeConnection();
+            MessageBox.Show("User registration successfull.");
             clearDataFields();
         }
 
