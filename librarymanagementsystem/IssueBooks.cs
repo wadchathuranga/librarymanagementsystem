@@ -119,10 +119,15 @@ namespace librarymanagementsystem
 
                         bookTitleLabel.Text = title;
                         bookStatusLabel.Text = status;
+
+                        // enable issue book text box & button
+                        if (status != "Loaned_Out") 
+                        {
+                            bookIssueButton.Enabled = true;
+                        }
                     }
 
-                    // enable issue book text box & button
-                    bookIssueButton.Enabled = true;
+                    
                 }
                 else
                 {
