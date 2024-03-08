@@ -91,6 +91,8 @@ namespace librarymanagementsystem
             // close db connection
             conn.closeConnection();
 
+            MessageBox.Show("Book registration successfull.");
+
             // clear text boxes
             clearDataFields();
         }
